@@ -1,0 +1,41 @@
+body {
+	padding: 5px;
+}
+.main {
+	position: absolute;
+	width: 800px;
+	left: 50%;
+	margin-left: -400px;
+	border-radius: 8px;
+	border: 1px solid #C0C0C0;
+	padding: 5px;
+	box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+.title,
+.content,
+.floor,
+.site,
+.leftPosition,
+.leftPosition span,
+.buttons, .button {
+	position: relative;
+	display: inline-block;
+}
+.title, .content, .floor, .site {
+	width: 100%;
+	border-radius: 8px;
+	background-color: #F8F8F8;
+}
+.title {
+	text-align: center;
+	height: 10%;
+}
+
+.floor {
+	margin-top: 5px;
+	height: 10%;
+	text-align: right;
+}
+.floor p {
+	padding: 5px;
+}

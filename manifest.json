@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	"name": "LoLCode",
+	"description": "league of legends code",
+	"version": "0.1",
+
+	"options_page": "options/options.html",
+
+	"background" : {
+		"page": "background.html"
+	},
+
+	"icons": {
+		"128": "icons/128x128.png",
+		"48": "icons/48x48.png",
+		"16": "icons/16x16.png"
+	},
+	
+    "browser_action": {
+	    "default_title": "LoLCode",
+	    "default_icon": "icons/lol_48x48.png",
+	    "default_popup": "popup/popup.html"
+    },
+    
+    "permissions": [
+    	"tabs",
+    	"http://"
+	]
+}
