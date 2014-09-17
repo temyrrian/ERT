@@ -1,9 +1,8 @@
 'use strict';
 
-var mechanism = {};
-
-var file = 'g';
-
+var 
+	mechanism = {},
+	currentOptions = {};
 
 
 chrome.runtime.onMessage.addListener(function(data, sender, callback) {
@@ -23,3 +22,4 @@ chrome.tabs.query( {'status': 'complete'}, function(tabs) {
         chrome.tabs.executeScript( tab.id, {file: 'js/mechanism/' + file + '.js'} );        
     });
 });
+

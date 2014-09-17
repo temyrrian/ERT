@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Nemo",
-	"description": "Translator",
+	"description": "Instant Translator",
 	"version": "0.1",
 
     "author": "Sergey Ponomarenko>",
@@ -10,6 +10,7 @@
 
     "background" : {
         "scripts": [
+        	"js/options.js",
             "js/core.js",
             "js/mechanism/google.js"
         ]
