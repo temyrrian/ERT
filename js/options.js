@@ -1,14 +1,14 @@
 'use strict';
 
 var Options = function() {
-	var options = {
+	this.defaultOptions = {
 		'mechanism': 'google',
 		'with': 'auto',
 		'into': 'ru' 
 	};
 
 	if (!localStorage.getItem('InstantTranslator_ttm')) {
-		localStorage.setItem('InstantTranslator_ttm', JSON.stringify(options));
+		localStorage.setItem('InstantTranslator_ttm', JSON.stringify(this.defaultOptions));
 	}
 
 	this.options = JSON.parse(localStorage.getItem('InstantTranslator_ttm'));
@@ -29,7 +29,13 @@ Options.prototype.getJSON = function() {
 
 Options.prototype.setJSON = function(o) {
 	for (var i in o) {
+		if (!o.hasOwnProperty(i)) {
+			continue;
+		}
 		this.options[i] = o[i];	
 	}
 	localStorage.setItem('InstantTranslator_ttm', JSON.stringify(this.options));
 };
+Options.prototype.getDefaultOptions = function() {
+	return this.defaultOptions;
+}
