@@ -2,7 +2,9 @@
 
 var Options = function() {
 	var options = {
-		mechanism: 'google'
+		'mechanism': 'google',
+		'with': 'auto',
+		'into': 'ru' 
 	};
 
 	if (!localStorage.getItem('InstantTranslator_ttm')) {

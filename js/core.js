@@ -7,15 +7,20 @@ var
 	mechanism = {},
 	currentOptions;
 
-// currentOptions = new Options();
+	currentOptions = new Options();
 
 
 
 
 
 chrome.runtime.onMessage.addListener(function(data, sender, sendResponse) {
-    if(data.ms == 'ololo') {
-        sendResponse({ trol: {qwe:1, asd: 3}});
+    if('upDateOptions' === data.ttm) {
+    	if (!data.options) {
+    		sendResponse({ options: currentOptions.getJSON()});	
+    	} else {
+    		console.log(data.options)
+    	}
+        
     }
 
     return false;
