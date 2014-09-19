@@ -8,19 +8,23 @@
 
 	// "options_page": "options/options.html",
 
+    // "background" : {
+    //     "scripts": [
+    //     	"js/options.js",
+    //         "js/core.js"
+    //         // "js/mechanism/google.js"
+    //     ]
+    // },
+
     "background" : {
-        "scripts": [
-        	"js/options.js",
-            "js/core.js",
-            "js/mechanism/google.js"
-        ]
+        "page": "b.html"
     },
 
-	// "icons": {
-	// 	"128": "icons/128x128.png",
-	// 	"48": "icons/48x48.png",
-	// 	"16": "icons/16x16.png"
-	// },
+	"icons": {
+		"128": "icons/ert_128x128.png",
+		"48": "icons/ert_48x48.png",
+		"16": "icons/ert_16x16.png"
+	},
 	
     // "browser_action": {
 	    // "default_title": "LoLCode",
@@ -30,6 +34,7 @@
     
     "permissions": [
     	"tabs",
+    	"*://*/*",
     	"http://*/*",
         "https://*/*"
 	]
