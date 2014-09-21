@@ -1,10 +1,11 @@
 'use strict';
+var mechanism = {};
 
 window.addEventListener("DOMContentLoaded", function() {
 
 
 var 
-	mechanism = {},
+	// mechanism = {},
 	currentOptions;
 
 	currentOptions = new Options();

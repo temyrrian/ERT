@@ -19,7 +19,10 @@
 
 	    send = function(name, objectName, object, callback) {
 	    	var obj = { 'ttm': name };
-	    	obj[objectName] = object;
+	    	if (objectName) {
+	    		obj[objectName] = object;
+	    	}
+	    	
     		chrome.runtime.sendMessage(obj, callback);
 	    };
 
