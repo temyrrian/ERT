@@ -1,6 +1,6 @@
-body {
+/*body {
 	padding: 5px;
-}
+}*/
 .main {
 	position: absolute;
 	width: 800px;
@@ -10,32 +10,64 @@ body {
 	border: 1px solid #C0C0C0;
 	padding: 5px;
 	box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	background-color: rgb(217, 237, 255);
 }
-.title,
-.content,
-.floor,
-.site,
-.leftPosition,
-.leftPosition span,
-.buttons, .button {
+.title {
+	width: 100%;
 	position: relative;
 	display: inline-block;
 }
-.title, .content, .floor, .site {
-	width: 100%;
+.title, .service {
 	border-radius: 8px;
-	background-color: #F8F8F8;
+	background-color: rgb(164, 212, 255);
 }
+
 .title {
 	text-align: center;
 	height: 10%;
 }
 
-.floor {
-	margin-top: 5px;
-	height: 10%;
-	text-align: right;
+.service {
+	left: 0;
+	right: 0;
+	margin-top: 5px; 
+	position: relative;
+	padding: 10px;
 }
-.floor p {
-	padding: 5px;
+
+.service fieldset {
+	border-color: rgb(200, 200, 200);
+	border-radius: 8px;
+	height: 100px;
+	line-height: 100%;
 }
+
+.service fieldset legend {
+	color: rgb(80, 80, 80);
+}
+
+.service fieldset .service-button {
+	display: inline-block; 
+	position: relative;
+	width: 20%;
+	height: 40px;
+	line-height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	border: 3px solid rgb(130, 130, 130);
+	border-radius: 8px;
+	font-size: 200%;
+	background-color: rgb(130, 130, 130);
+	margin-top: 18px;
+	color: rgb(80, 80, 80);
+}
+.service fieldset:hover {
+	border-color: rgb(242, 150, 70);
+}
+.service fieldset .service-button:hover {
+	border-color: rgb(242, 150, 70);
+	color: rgb(242, 150, 70);
+	cursor: pointer;
+}
+
+
