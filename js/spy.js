@@ -2,46 +2,55 @@
 
     'use strict';
 
-    var isCtrl = false;
+    // variables
+    var isCtrl = false,
+        translateWindow = null,
+        options = {},
+        lastTranslate = '';
 
-    var translateWindow = null;
-    var options = {};
-    var lastTranslate = '';
 
-    var translate;
-    var getSelectedText;
-    var upDateOptions;
-    var send;
-    var show;
-    var hide;
-    var createTerminal;
-    var changingValues;
-    var additionalValues;
-    var setCss;
-    var create;
-    var removeCh;
-    var setTranslateWindowEvents;
-    var createSelect;
-    var createTranslateButton;
-    var createControlField;
+    // functions
+    var translate,
+        getSelectedText,
+        upDateOptions,
+        send,
+        show,
+        hide,
+        createTerminal,
+        changingValues,
+        additionalValues,
+        setCss,
+        create,
+        removeCh,
+        setTranslateWindowEvents,
+        createSelect,
+        createTranslateButton,
+        createControlField;
 
     var terminal = {
         translateWindow: null,
-        top: null,
-
-        from: null,
-        to: null,
-        buttonsField: null,
-        other: null,
         hoverFalg: false,
-        fromSelect: null,
-        toSelect: null,
-        translateButton: null,
+        controlField: {
+            node: null,
+            reductionButtonFlag: false,
+            castleButtonFlag: false
+        },
+        from: {
+            top: null,
+            node: null,
+            buttonsField: {
+                node: null,
+                fromSelect: null,
+                toSelect: null,
+                translateButton: null
+            },
+        },
+        to: {
+            node: null,
+            other: null,
+        }
 
-        controlField: null,
-        lockButtonFlag: false,
-        reductionButtonFlag: false
-    };
+    }
 
     if (!window.translateololo) {
 		window.translateololo = true;
@@ -97,7 +106,7 @@
 
         createControlField = function() {
             var fixed, close, small;
-            terminal.controlField = create('div', {
+            terminal.controlField.node = create('div', {
                 'width': '100%',
                 'height': '20px',
                 'backgroundColor': '#C58DC9'
@@ -108,38 +117,40 @@
                 'border': '0px',
                 'margin': '0px',
                 'padding': '0px',
-                'height': '20px',
+                'height': '18px',
                 'width': '20px',
+                'margin-left': '3px',
                 'background-repeat': 'no-repeat',
-                'background-size': 'auto 20px',
-                'background-position-x': '-2px',
+                'background-size': 'auto 18px',
                 'background-color': 'transparent',
-                'background-image': 'url(' + chrome.extension.getURL('img/castle.gif') + ')'
+                'background-image': 'url(' + chrome.extension.getURL('img/lock_2.png') + ')'
             });
             fixed.addEventListener('click', function() {
-                if (terminal.lockButtonFlag) {
-                    terminal.lockButtonFlag = false;
-                    fixed.style.backgroundPositionX = '-2px';
+                if (terminal.controlField.castleButtonFlag) {
+                    terminal.controlField.castleButtonFlag = false;
+                    setCss(fixed, {
+                        'background-image': 'url(' + chrome.extension.getURL('img/lock_2.png') + ')'
+                    });
                 } else {
-                    terminal.lockButtonFlag = true;
-                    fixed.style.backgroundPositionX = '-42px';
+                    terminal.controlField.castleButtonFlag = true;
+                    setCss(fixed, {
+                        'background-image': 'url(' + chrome.extension.getURL('img/lock.png') + ')'
+                    });
                 }
             });
-            terminal.controlField.appendChild(fixed);
+            terminal.controlField.node.appendChild(fixed);
 
             close = create('button', {
                 'position': 'absolute',
                 'border': '1px solid',
                 'border-color': 'transparent',
                 'right': '0px',
-                // 'border': '0px',
                 'margin-right': '3px',
                 'padding': '0px',
                 'height': '18px',
                 'width': '18px',
                 'background-repeat': 'no-repeat',
                 'background-size': 'auto 18px',
-                // 'background-position-x': '-2px',
                 'background-color': 'transparent',
                 'background-image': 'url(' + chrome.extension.getURL('img/cross.png') + ')'
             });
@@ -147,49 +158,48 @@
                 hide();
             });
             close.addEventListener('mauseover', function() {
-                console.log('ee');
                 close.style.borderColor = 'red';
             });
-            terminal.controlField.appendChild(close);
+            terminal.controlField.node.appendChild(close);
 
             small = create('button', {
                 'position': 'absolute',
                 'border': '1px solid',
                 'border-color': 'transparent',
                 'left': '20px',
-                'margin-right': '3px',
+                'margin-left': '3px',
                 'padding': '0px',
                 'height': '18px',
                 'width': '18px',
                 'background-repeat': 'no-repeat',
-                'background-size': 'auto 18px',
+                'background-size': '18px 18px',
                 'background-color': 'transparent',
-                'background-image': 'url(' + chrome.extension.getURL('img/max.jpg') + ')'
+                'background-image': 'url(' + chrome.extension.getURL('img/arrow_up.png') + ')'
             });
             // reductionButtonFlag
 
             small.addEventListener('click', function() {
-                if (terminal.reductionButtonFlag) {
-                    terminal.reductionButtonFlag = false;
+                if (terminal.controlField.reductionButtonFlag) {
+                    terminal.controlField.reductionButtonFlag = false;
                     setCss(small, {
-                        'background-image': 'url(' + chrome.extension.getURL('img/min.jpg') + ')'
+                        'background-image': 'url(' + chrome.extension.getURL('img/arrow_up.png') + ')'
                     });
-                    setCss(terminal.top, {
+                    setCss(terminal.from.top, {
                         'display': 'none',
                         'visbility': 'visible'
                     });
                 } else {
-                    terminal.reductionButtonFlag = true;
+                    terminal.controlField.reductionButtonFlag = true;
                     setCss(small, {
-                        'background-image': 'url(' + chrome.extension.getURL('img/max.jpg') + ')'         
+                        'background-image': 'url(' + chrome.extension.getURL('img/arrow_down.png') + ')'         
                     });
-                    setCss(terminal.top, {
+                    setCss(terminal.from.top, {
                         'display': 'block',
                         'visbility': 'visible'
                     });
                 }
             });
-            terminal.controlField.appendChild(small);
+            terminal.controlField.node.appendChild(small);
         };
 
         createTerminal = function() {
@@ -213,8 +223,8 @@
 
                 createControlField();
 
-                terminal.translateWindow.appendChild(terminal.controlField);
 
+                terminal.translateWindow.appendChild(terminal.controlField.node);
 
                 // core window
                 div = create('div', { 'height': '280px' });
@@ -232,16 +242,16 @@
                 });
                 div.appendChild(from);
 
-                terminal.from = create('input', {
+                terminal.from.node = create('input', {
                     'width': '100%',
                     'box-sizing': 'border-box'
                 });
-                terminal.from.setAttribute('size', '25');
-                terminal.from.setAttribute('type', 'text');
-                from.appendChild(terminal.from);
-                terminal.top = from;
+                terminal.from.node.setAttribute('size', '25');
+                terminal.from.node.setAttribute('type', 'text');
+                from.appendChild(terminal.from.node);
+                terminal.from.top = from;
                 // buttons field
-                terminal.buttonsField = create('div', {
+                terminal.from.buttonsField.node = create('div', {
                     'display': 'flex',
                     'justify-content': 'center',
                     'align-content': 'center',
@@ -250,13 +260,12 @@
                     'padding-bottom': '3px'
                 });
                 createSelect('from');
-                terminal.buttonsField.appendChild(terminal.fromSelect);
+                terminal.from.buttonsField.node.appendChild(terminal.from.buttonsField.fromSelect);
                 createSelect('to');
-                terminal.buttonsField.appendChild(terminal.toSelect);
+                terminal.from.buttonsField.node.appendChild(terminal.from.buttonsField.toSelect);
                 createTranslateButton();
-                terminal.buttonsField.appendChild(terminal.translateButton);
-                from.appendChild(terminal.buttonsField);
-
+                terminal.from.buttonsField.node.appendChild(terminal.from.buttonsField.translateButton);
+                from.appendChild(terminal.from.buttonsField.node);
 
                 // to window
                 to = create('div', {
@@ -271,23 +280,23 @@
                     'padding': '3px'
                 });
 
-                terminal.to = create('span', {
+                terminal.to.node = create('span', {
                     'width': '100%',
                     'font-size': '25px'
                 });
 
-                temp.appendChild(terminal.to);
+                temp.appendChild(terminal.to.node);
                 to.appendChild(temp);
 
 
-                terminal.other = create('div', {
+                terminal.to.other = create('div', {
                     'padding': '3px',
                     'width': '100%',
                     'box-sizing': 'border-box'
 
                 });
 
-                to.appendChild(terminal.other);
+                to.appendChild(terminal.to.other);
                 terminal.translateWindow.appendChild(div);
 
                 setTranslateWindowEvents();
@@ -300,7 +309,7 @@
             var b = create('button');
 
             b.innerHTML = 'Translate';
-            terminal.translateButton = b;
+            terminal.from.buttonsField.translateButton = b;
         };
 
         createSelect = function(v) {
@@ -319,7 +328,7 @@
             opt.appendChild(document.createTextNode('ololo'));
             s.options[s.options.length] = opt;
 
-            terminal[v + 'Select'] = s;
+            terminal.from.buttonsField[v + 'Select'] = s;
         };
 
         removeCh = function(node) {
@@ -334,7 +343,7 @@
         additionalValues = function(values) {
             var createBlock, table;
 
-            removeCh(terminal.other);
+            removeCh(terminal.to.other);
 
             if (!values.other) { return; }
 
@@ -393,14 +402,14 @@
                 table.appendChild(createBlock(el));
             });
 
-            terminal.other.appendChild(table);
+            terminal.to.other.appendChild(table);
         };
 
         changingValues = function(values) {
             createTerminal();
             console.log('values', values.other);
-            terminal.from.value = lastTranslate;
-            terminal.to.innerHTML = values.core;
+            terminal.from.node.value = lastTranslate;
+            terminal.to.node.innerHTML = values.core;
 
             additionalValues(values);
 

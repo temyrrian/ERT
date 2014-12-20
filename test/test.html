@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title></title>
+    <script>
+        // var start = function() {
+        //     var str = [[["Текст - тень","text-shadow","Tekst - ten'",""]],,"en",,[["Текст",[1],true,false,1000,0,1,0],["-",[2],false,true,879,1,2,0],["тень",[3],false,false,879,2,3,0]],[["text",1,[["Текст",1000,true,false],["текста",0,true,false],["текстовый",0,true,false],["текстовая",0,true,false],["текстов",0,true,false]],[[0,4]],"text-shadow"],["-",2,[["-",879,false,true]],[[4,5]],""],["shadow",3,[["тень",879,false,false],["тени",0,false,false],["теневой",0,false,false],["тенью",0,false,false],["теней",0,false,false]],[[5,11]],""]],,,[["en"]],36];
+            
+        //     str += " ";
+        //     console.log(eval(str));
+
+        //     // console.log(str.replace(/\[|\]|"| /g,'').split(','));
+            
+        // };
+    </script>
+    <style>
+        .main {
+            border: 1px solid;
+            width: 300px;
+            height: 300px;
+        }
+        .cf {
+            width: 100%;
+            height: 20px;
+            background-color: green;
+        }
+        .wraper {
+            display: flex;
+            -wbkit-flex-direction: column;
+            flex-direction: column;
+            height: 280px;
+        }
+        .item1 {
+            flex-basis: 45px;
+            background-color: red;
+        }
+        .item2 {
+            background-color: blue;
+        }
+        .item3 {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body onload="start();">
+    <div class="main">
+        <div class="cf"></div>
+        <div class="wraper">
+            <div class="item1">
+                ololo
+            </div>
+            <div class="item2">
+                ololo
+            </div>
+            <div class="item3">
+                ololo
+            </div>
+        </div>
+    </div>
+</body>
+</html>
