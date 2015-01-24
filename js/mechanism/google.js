@@ -33,7 +33,6 @@ mechanism.google = {
                     result = result.replace(/\{,/gi, '{null,')
                 }
                 result = JSON.parse(result);
-                console.log('meh', this.parse(result));
                 callback(this.parse(result));
             }
         }, this);

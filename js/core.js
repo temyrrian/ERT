@@ -6,7 +6,32 @@ window.addEventListener("DOMContentLoaded", function() {
 
 var 
 	// mechanism = {},
-	currentOptions;
+	currentOptions,
+    langs = [
+        'af', 'ar', 'az',
+        'be', 'bg', 'bn', 'bs',
+        'ca', 'ceb', 'cs', 'cy',
+        'da', 'de',
+        'el', 'en', 'eo', 'es', 'et', 'eu',
+        'fa', 'fi', 'fr',
+        'ga', 'gl', 'gu',
+        'ha', 'hi', 'hmn', 'hr', 'ht', 'hu', 'hy',
+        'id', 'ig', 'is', 'it', 'iw',
+        'ja', 'jw',
+        'ka', 'km', 'kn', 'ko',
+        'la', 'lo', 'lt', 'lv',
+        'mi', 'mk', 'mn', 'mr', 'ms', 'mt',
+        'ne', 'nl', 'no',
+        'pa', 'pl', 'pt',
+        'ro', 'ru',
+        'sk', 'sl', 'so', 'sq', 'sr', 'sv', 'sw',
+        'ta', 'te', 'th', 'tl', 'tr',
+        'uk', 'ur',
+        'vi',
+        'yi', 'yo',
+        'zh-CN', 'zu'
+    ];
+
 
 	currentOptions = new Options();
 Function.bind = function(t) {

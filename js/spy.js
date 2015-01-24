@@ -380,12 +380,10 @@
                                 'font-style': 'italic',
                                 'padding-left': '3px'
                             });
-                            console.log ('------', el[i] + ': ')
                             td.innerHTML = el[i] + ': ';
                             tr.appendChild(td);
                         } else {
                             td = create('td', { 'padding-right': '3px' });
-                                console.log(el[i]);
                             el[i].forEach(function(str) {
                                 td.innerHTML = td.innerHTML + str + ', ';
                             });
@@ -407,7 +405,6 @@
 
         changingValues = function(values) {
             createTerminal();
-            console.log('values', values.other);
             terminal.from.node.value = lastTranslate;
             terminal.to.node.innerHTML = values.core;
 

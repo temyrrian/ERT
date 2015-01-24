@@ -1,0 +1,242 @@
+{
+    "af": {
+        "message": "Afrikaans"
+    },
+    "ar": {
+        "message": "Arabic"
+    },
+    "az": {
+        "message": "Azerbaijani"
+    },
+    "be": {
+        "message": "Belarusian"
+    },
+    "bg": {
+        "message": "Bulgarian"
+    },
+    "bn": {
+        "message": "Bengali"
+    },
+    "bs": {
+        "message": "Bosnian"
+    },
+    "ca": {
+        "message": "Catalan"
+    },
+    "ceb": {
+        "message": "Cebuano"
+    },
+    "cs": {
+        "message": "Czech"
+    },
+    "cy": {
+        "message": "Welsh"
+    },
+    "da": {
+        "message": "Danish"
+    },
+    "de": {
+        "message": "German"
+    },
+    "el": {
+        "message": "Greek"
+    },
+    "en": {
+        "message": "English"
+    },
+    "eo": {
+        "message": "Esperanto"
+    },
+    "es": {
+        "message": "Spanish"
+    },
+    "et": {
+        "message": "Estonian"
+    },
+    "eu": {
+        "message": "Basque"
+    },
+    "fa": {
+        "message": "Persian"
+    },
+    "fi": {
+        "message": "Finnish"
+    },
+    "fr": {
+        "message": "French"
+    },
+    "ga": {
+        "message": "Irish"
+    },
+    "gl": {
+        "message": "Galician"
+    },
+    "gu": {
+        "message": "Gujarati"
+    },
+    "ha": {
+        "message": "Hausa"
+    },
+    "hi": {
+        "message": "Hindi"
+    },
+    "hmn": {
+        "message": "Hmong"
+    },
+    "hr": {
+        "message": "Croatian"
+    },
+    "ht": {
+        "message": "Haitian Creole"
+    },
+    "hu": {
+        "message": "Hungarian"
+    },
+    "hy": {
+        "message": "Armenian"
+    },
+    "id": {
+        "message": "Indonesian"
+    },
+    "ig": {
+        "message": "Igbo"
+    },
+    "is": {
+        "message": "Icelandic"
+    },
+    "it": {
+        "message": "Italian"
+    },
+    "iw": {
+        "message": "Hebrew"
+    },
+    "ja": {
+        "message": "Japanese"
+    },
+    "jw": {
+        "message": "Javanese"
+    },
+    "ka": {
+        "message": "Georgian"
+    },
+    "km": {
+        "message": "Khmer"
+    },
+    "kn": {
+        "message": "Kannada"
+    },
+    "ko": {
+        "message": "Korean"
+    },
+    "la": {
+        "message": "Latin"
+    },
+    "lo": {
+        "message": "Lao"
+    },
+    "lt": {
+        "message": "Lithuanian"
+    },
+    "lv": {
+        "message": "Latvian"
+    },
+    "mi": {
+        "message": "Maori"
+    },
+    "mk": {
+        "message": "Macedonian"
+    },
+    "mn": {
+        "message": "Mongolian"
+    },
+    "mr": {
+        "message": "Marathi"
+    },
+    "ms": {
+        "message": "Malay"
+    },
+    "mt": {
+        "message": "Maltese"
+    },
+    "ne": {
+        "message": "Nepali"
+    },
+    "nl": {
+        "message": "Dutch"
+    },
+    "no": {
+        "message": "Norwegian"
+    },
+    "pa": {
+        "message": "Punjabi"
+    },
+    "pl": {
+        "message": "Polish"
+    },
+    "pt": {
+        "message": "Portuguese"
+    },
+    "ro": {
+        "message": "Romanian"
+    },
+    "ru": {
+        "message": "Russian"
+    },
+    "sk": {
+        "message": "Slovak"
+    },
+    "sl": {
+        "message": "Slovenian"
+    },
+    "so": {
+        "message": "Somali"
+    },
+    "sq": {
+        "message": "Albanian"
+    },
+    "sr": {
+        "message": "Serbian"
+    },
+    "sv": {
+        "message": "Swedish"
+    },
+    "sw": {
+        "message": "Swahili"
+    },
+    "ta": {
+        "message": "Tamil"
+    },
+    "te": {
+        "message": "Telugu"
+    },
+    "th": {
+        "message": "Thai"
+    },
+    "tl": {
+        "message": "Filipino"
+    },
+    "tr": {
+        "message": "Turkish"
+    },
+    "uk": {
+        "message": "Ukrainian"
+    },
+    "ur": {
+        "message": "Urdu"
+    },
+    "vi": {
+        "message": "Vietnamese"
+    },
+    "yi": {
+        "message": "Yiddish"
+    },
+    "yo": {
+        "message": "Yoruba"
+    },
+    "zh_CN": {
+        "message": "Chinese"
+    },
+    "zu": {
+        "message": "Zulu"
+    }
+}

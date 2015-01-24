@@ -4,7 +4,9 @@ var Options = function() {
 	this.defaultOptions = {
 		'mechanism': 'google',
 		'with': 'auto',
-		'into': 'ru'
+		'into': 'ru',
+		'keys': [],
+		'position': 'bottom-right'
 	};
 
 	if (!localStorage.getItem('InstantTranslator_ttm')) {
