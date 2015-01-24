@@ -14,53 +14,86 @@
 			<h2>Nemo options</h2>
 		</header>
 
-	    <div class="tr-button row" data-toggle="buttons-radio">
-	    	<label class="span2 control-group" for="service">Service: </label>
-	    	<div class="controls span4">
-	    		<select class="" id="service">
-	  				<option value="Google">Google</option>
-	  				<option value="Yandex">Yandex</option>
-	  				<option value="Bing">Bing</option>
-				</select>	
-	    	</div>
+	    <div class="tr-button row">
+	    	<fieldset>
+				<legend>Service</legend>
+		    	<div class="controls span4">
+		    		<select class="" id="service">
+		  				<option value="Google">Google</option>
+		  				<option value="Yandex">Yandex</option>
+		  				<option value="Bing">Bing</option>
+					</select>	
+		    	</div>
+		    </fiedset>
 	    </div>
 
 		<div class="row tr-type">
-			<div class="span2">Test: </div>
-			<div class="span3">
-				<select>
-	  				<option value="test1">test1</option>
-	  				<option value="test2">test2</option>
-	  				<option value="test3">test3</option>
-				</select>
-			</div>
-			<div class="span2"><i class="icon icon-arrow-right"></i></div>
-			<div class="span2"><i class="glyphicon glyphicon-search"></i></div>
-			<span class="glyphicon glyphicon-search"></span>
-			<div class="span3">
-				<select class="span3">
-	  				<option value="test1">test1</option>
-	  				<option value="test2">test2</option>
-	  				<option value="test3">test3</option>
-				</select>
-			</div>
+			<fieldset>
+				<legend>Translation</legend>
+				<div class="span4">
+					<select style="width: 100%;">
+		  				<option value="test1">test1</option>
+		  				<option value="test2">test2</option>
+		  				<option value="test3">test3</option>
+					</select>
+				</div>
+				<div class="span4" style="text-align: center;">to</div>
+				<div class="span4">
+					<select class="span3" style="width: 100%;">
+		  				<option value="test1">test1</option>
+		  				<option value="test2">test2</option>
+		  				<option value="test3">test3</option>
+					</select>
+				</div>
+			</fieldset>
+		</div>
+		<div class="row">
+			<fieldset>
+				<legend>Keys</legend>
+				<label class="radio span3">
+				    <input type="radio" name="keys" value="ctrl"> Ctrl
+				</label>
+			    <label class="radio span3">
+				    <input type="radio" name="keys" value="shift"> Shift
+				</label>
+				<label class="radio span3">
+				    <input type="radio" name="keys" value="alt"> Alt
+				</label>
+				<label class="radio span2">
+				    <input type="radio" name="keys" value="customize"> Сustomize
+				</label>
+				<div class="panel span12">
+					тут будет кастомная настройка из 1 или 2 комбинаций клавиш
+				</div>
+		  	</fieldset>
 		</div>
 		<div class="row tr-pos" data-toggle="buttons-radio">
-			<button type="button" class="btn span3" href="#">
-				<div style="width: 100xp; height: 100px; background-color: red;"></div>
-			</button>
-	    	<button type="button" class="btn  span3" href="#">
-				<div style="width: 100xp; height: 100px; background-color: red;"></div>
-			</button>
-			<button type="button" class="btn  span3" href="#">
-				<div style="width: 100xp; height: 100px; background-color: red;"></div>
-			</button>
-			<button type="button" class="btn  span3" href="#">
-				<div style="width: 100xp; height: 100px; background-color: red;"></div>
-			</button>
+			<fieldset>
+				<legend>Position</legend>
+				<button type="button" class="btn span3" href="#">
+					<div class="wrapper">
+						<div class="pos pos1"></div>
+					</div>
+				</button>
+		    	<button type="button" class="btn  span3" href="#">
+					<div class="wrapper">
+						<div class="pos pos2"></div>
+					</div>
+				</button>
+				<button type="button" class="btn  span3" href="#">
+					<div class="wrapper">
+						<div class="pos pos3"></div>
+					</div>
+				</button>
+				<button type="button" class="btn  span3" href="#">
+					<div class="wrapper">
+						<div class="pos pos4"></div>
+					</div>
+				</button>
+			</fieldset>
 		</div>
 		<div class="row footer">
-			
+			footer
 		</div>
 	</div>
 	<script src="bootstrap/js/jquery.js"></script>
