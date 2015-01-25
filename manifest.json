@@ -7,7 +7,7 @@
     "author": "Sergey Ponomarenko>",
 
 	"options_page": "options/options.html",
-
+    "default_locale": "en",
     // "background" : {
     //     "scripts": [
     //     	"js/options.js",
